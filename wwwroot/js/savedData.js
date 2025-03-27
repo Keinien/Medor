@@ -41,9 +41,9 @@ function loadGridData() {
                 ],
                 data: data.map(item => [
                     item.id,
-                    item.datum,
-                    item.btceur,
-                    item.btccze,
+                    item.date,
+                    item.btcEur,
+                    item.btcCze,
                     item.note || "",
                     item.checked,
                     ""
@@ -90,10 +90,6 @@ function saveRecord(id) {
         });
 }
 
-document.addEventListener("DOMContentLoaded", function () {
-    document.querySelector("#deleteSelectedBtn").addEventListener("click", deleteSelectedRecords);
-});
-
 function deleteSelectedRecords() {
     const checkedCheckboxes = document.querySelectorAll('#wrapper input[type="checkbox"]:checked');
     const idsToDelete = Array.from(checkedCheckboxes).map(cb => cb.getAttribute('data-id'));
@@ -130,6 +126,8 @@ function deleteSelectedRecords() {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
+    document.querySelector("#deleteSelectedBtn").addEventListener("click", deleteSelectedRecords);
+
     document.querySelectorAll('a[data-bs-toggle="tab"]').forEach(tab => {
         tab.addEventListener('shown.bs.tab', event => {
             if (event.target.id === 'savedDataTabLink') {

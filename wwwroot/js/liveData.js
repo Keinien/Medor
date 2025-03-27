@@ -68,8 +68,8 @@ function addRecord(data) {
         id: state.recordId++,
         timestamp: currentDate,
         dateFormatted: formatDate(currentDate),
-        btcEurPrice: data.Data["BTC-EUR"].PRICE,
-        btcCzePrice: data.EURCZE
+        btcEurPrice: data.btcEurPrice,
+        btcCzePrice: data.btcCzkPrice
     };
     state.dataRows.unshift(record);
 }
