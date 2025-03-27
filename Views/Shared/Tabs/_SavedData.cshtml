@@ -1,0 +1,13 @@
+﻿<h2>Saved Data</h2>
+
+<div id="wrapper"></div>
+<button id="deleteSelectedBtn">Smazat vybrané</button>
+
+<script>
+    var getSavedDataUrl = '@Url.Action("GetSavedData", "Home")';
+    var updateNoteUrl = '@Url.Action("UpdateSavedData", "Home")';
+    var deleteRecordsUrl = '@Url.Action("DeleteSavedData", "Home")';
+</script>
+<link href="https://unpkg.com/gridjs/dist/theme/mermaid.min.css" rel="stylesheet" />
+<script src="https://unpkg.com/gridjs/dist/gridjs.umd.js"></script>
+<script type="module" src="~/js/savedData.js"></script>
